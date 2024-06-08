@@ -1,26 +1,16 @@
-from datetime import date
 import requests
 from bs4 import BeautifulSoup
 
-result = []
-
-def headline_scrapper():
-    beg = requests.get("https://kathmandupost.com/politics/")
-    soup = BeautifulSoup(beg.content, "html.parser")
-    search = soup.find_all("h3")
-    search_list = list(search)
-    for x in search_list:
-        news_headline = str(x).replace("<h3>", "").replace("</h3>" ,"")
-
-        news_output = "https://kathmandupost.com/politics/"
-
-        new_news_headline = news_headline.lower() 
-
-        updated_news_headline = new_news_headline.replace(" ","-")
-
-        result.append (news_output + str(date.today()) +"/" +updated_news_headline )
-
-    return result
+def news_scrap():
     
-for i in headline_scrapper():
-    print (i)
+    getfrom = requests.get("https://kathmandupost.com/cricket/2024/06/05/nepal-start-t20-world-cup-campaign-on-a-sour-note")
+    intitial_content = BeautifulSoup(getfrom.content, "html.parser")
+    search = intitial_content.find_all("p")
+    contents = list(search)[0]
+#     news = str(contents).replace("<p>", "").replace("</p>", "").replace("<br/>", "").replace("[","").replace("]", "").replace(",","")
+
+#     return news
+
+# print(news_scrap())
+    return contents
+print(news_scrap())
