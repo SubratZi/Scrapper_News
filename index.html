@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Data Display</title>
+    <style>
+        .data-container {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .data-container h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .data-container p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="data-container">
+        <h1>{{ item.name }}</h1>
+        <p>ID: {{ item.id }}</p>
+        <p>Price: ${{ item.price }}</p>
+    </div>
+</body>
+</html>
