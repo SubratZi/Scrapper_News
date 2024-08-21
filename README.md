@@ -21,7 +21,7 @@ News_Scraper is a Python-based project that automates the process of scraping ne
 
 1. **Clone the repository:**
 
-    git clone https://github.com/ParsuramBaral/Scrapper_News.git
+    git clone https://github.com/SubratZi/Scrapper_News.git
     cd News_Scraper
 
 2. **Set up a vitual environment** (OPTIONAL BUT SUGGESTED!)
